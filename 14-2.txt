@@ -1,0 +1,12 @@
+#include <IRremote.h>
+IRsend irsend;
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop() {
+		irsend.sendNEC(0x06050615, 32);
+    Serial.println("Send");
+	  delay(5000); //5 second delay between each signal burst
+}
